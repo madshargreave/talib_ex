@@ -1,13 +1,16 @@
 defmodule Talibex.Mixfile do
   use Mix.Project
 
+  @version "0.1.0"
+
   def project do
     [
       app: :talibex,
-      version: "0.1.0",
+      version: @version,
       elixir: "~> 1.5",
       start_permanent: Mix.env == :prod,
-      deps: deps()
+      deps: deps(),
+      package: package
     ]
   end
 
@@ -25,4 +28,17 @@ defmodule Talibex.Mixfile do
       {:erlport, git: "https://github.com/hdima/erlport.git"}
     ]
   end
+
+  defp package do
+    [
+      description: "A thin Elixir wrapper around Ta-Lib",
+      licenses: ["MIT License"],
+      maintainers: ["Mads Hargreave"],
+      links: %{
+        github: "https://github.com/madshargreave/talibex",
+        docs: "http://hexdocs.pm/talibex/#{@version}/"
+      }
+    ]
+  end
+
 end
