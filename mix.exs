@@ -25,7 +25,8 @@ defmodule Talibex.Mixfile do
   # Run "mix help deps" to learn about dependencies.
   defp deps do
     [
-      {:erlport, "~> 0.9.8"}
+      {:erlport, "~> 0.9.8"},
+      {:ex_doc, ">= 0.0.0", only: :dev}
     ]
   end
 
