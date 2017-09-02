@@ -4,12 +4,9 @@ defmodule Talibex do
   """
   alias Talibex.Worker
 
-  @type high :: float
-  @type low :: float
-  @type open :: float
-  @type close :: float
-  @type volume :: float
-  @type candle :: {high, low, open, close, volume}
+  @type series :: [float]
+
+  # Momentum
 
   @doc "Exponentiel moving average"
   def ema(data, period \\ 12), do: call(:momentum, :ema, [data, period])
@@ -37,6 +34,13 @@ defmodule Talibex do
 
   @doc "Evening star"
   def evening_star(open, high, low, close, penetration \\ 0), do: call(:pattern, :evening_star, [open, high, low, close, penetration])
+
+  # Volume
+
+  @spec obv(series, series) :: float
+  def obv(close, volume) do
+    call(:volume, :obv, [close, volume])
+  end
 
   defp call(file, function, arguments) do
     Worker.call(file, function, arguments)
