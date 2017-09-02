@@ -14,6 +14,9 @@ defmodule Talibex do
   @doc "Exponentiel moving average"
   def ema(data, period \\ 12), do: call(:momentum, :ema, [data, period])
 
+  @doc ""
+  def rocp(data, period \\ 10), do: call(:momentum, :rocp, [data, period])
+
   @doc "Moving average convergence/divergence"
   def macd(close, fast \\ 12, slow \\ 26, signal \\ 9), do: call(:momentum, :macd, [close, fast, slow, signal])
 

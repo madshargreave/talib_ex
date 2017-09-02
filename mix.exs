@@ -1,7 +1,7 @@
 defmodule Talibex.Mixfile do
   use Mix.Project
 
-  @version "0.2.0"
+  @version "0.2.1"
 
   def project do
     [
@@ -26,7 +26,8 @@ defmodule Talibex.Mixfile do
   defp deps do
     [
       {:erlport, "~> 0.9.8"},
-      {:ex_doc, ">= 0.0.0", only: :dev}
+      {:ex_doc, ">= 0.0.0", only: :dev},
+      {:mix_test_watch, "~> 0.3", only: :dev, runtime: false},
     ]
   end
 
