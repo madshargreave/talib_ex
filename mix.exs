@@ -1,11 +1,11 @@
 defmodule Talibex.Mixfile do
   use Mix.Project
 
-  @version "0.1.0"
+  @version "0.2.0"
 
   def project do
     [
-      app: :talibex,
+      app: :talib_ex,
       version: @version,
       elixir: "~> 1.5",
       start_permanent: Mix.env == :prod,
@@ -36,8 +36,8 @@ defmodule Talibex.Mixfile do
       licenses: ["MIT License"],
       maintainers: ["Mads Hargreave"],
       links: %{
-        github: "https://github.com/madshargreave/talibex",
-        docs: "http://hexdocs.pm/talibex/#{@version}/"
+        github: "https://github.com/madshargreave/talib_ex",
+        docs: "http://hexdocs.pm/talib_ex/#{@version}/"
       }
     ]
   end

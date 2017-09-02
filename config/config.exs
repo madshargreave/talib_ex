@@ -10,11 +10,11 @@ use Mix.Config
 
 # You can configure your application as:
 #
-#     config :talibex, key: :value
+#     config :talib_ex, key: :value
 #
 # and access this configuration in your application as:
 #
-#     Application.get_env(:talibex, :key)
+#     Application.get_env(:talib_ex, :key)
 #
 # You can also configure a 3rd-party app:
 #
