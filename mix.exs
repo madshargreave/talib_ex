@@ -10,7 +10,7 @@ defmodule Talibex.Mixfile do
       elixir: "~> 1.5",
       start_permanent: Mix.env == :prod,
       deps: deps(),
-      package: package
+      package: package()
     ]
   end
 
@@ -25,7 +25,7 @@ defmodule Talibex.Mixfile do
   # Run "mix help deps" to learn about dependencies.
   defp deps do
     [
-      {:erlport, git: "https://github.com/hdima/erlport.git"}
+      {:erlport, "~> 0.9.8"}
     ]
   end
 
