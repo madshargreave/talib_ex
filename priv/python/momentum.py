@@ -1,6 +1,7 @@
 import talib
 import numpy as np
 import math
+import utils
 
 def cci(high, low, close, timeperiod=14):
   high = np.asarray(high)
@@ -26,7 +27,7 @@ def macd(prices, fastperiod, slowperiod, signalperiod):
   prices = np.asarray(prices)
 
   macd, signal, hist = talib.MACD(prices, fastperiod=fastperiod, slowperiod=slowperiod, signalperiod=signalperiod)
-  return round(float(hist[-1]), 3)
+  return utils.format_result(hist)
 
 def q_stick(opens, closes, period):
   opens = np.asarray(opens)
@@ -42,7 +43,7 @@ def rsi(close, period):
   close = np.asarray(close)
 
   rsi = talib.RSI(close, timeperiod=period)
-  return round(float(rsi[-1]), 3)
+  return utils.format_result(rsi)
 
 def mfi(high, low, close, volume, period):
   high = np.asarray(high)
@@ -52,3 +53,4 @@ def mfi(high, low, close, volume, period):
 
   mfi = talib.MFI(high=high, low=low, close=close, volume=volume, timeperiod=period)
   return float(mfi[-1])
+
