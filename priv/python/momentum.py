@@ -27,7 +27,13 @@ def macd(prices, fastperiod, slowperiod, signalperiod):
   prices = np.asarray(prices)
 
   macd, signal, hist = talib.MACD(prices, fastperiod=fastperiod, slowperiod=slowperiod, signalperiod=signalperiod)
-  return utils.format_result(hist)
+  return utils.format_result(macd - signal)
+
+def ppo(prices, fastperiod, slowperiod):
+  prices = np.asarray(prices)
+
+  ppo = talib.PPO(prices, fastperiod=fastperiod, slowperiod=slowperiod)
+  return utils.format_result(ppo)
 
 def q_stick(opens, closes, period):
   opens = np.asarray(opens)

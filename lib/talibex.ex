@@ -24,6 +24,14 @@ defmodule Talibex do
     Worker.call(:momentum, :rsi, [close, period])
   end
 
+  @doc """
+  Percentage Price Oscillator
+  """
+  @spec ppo(series, integer) :: series
+  def ppo(close, fast \\ 12, slow \\ 26) do 
+    Worker.call(:momentum, :ppo, [close, fast, slow])
+  end
+
   # Volume
 
   @doc """
