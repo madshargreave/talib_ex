@@ -17,7 +17,7 @@ defmodule Talibex.Worker do
   #
 
   def init(:ok) do
-    path =  :code.priv_dir(:talib_ex) |> Path.join("python") |> to_char_list
+    path =  :code.priv_dir(:talib_ex) |> Path.join("python") |> to_charlist
     {:ok, python} = :python.start([{:python_path, path}, {:python, 'python'}])
     {:ok, python}
   end
